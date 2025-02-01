@@ -18,6 +18,59 @@
       type="images/png"
     />
     <title>Service-Control ®</title>
+    <!-- Подключение Font Awesome для использования иконок -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+    <style>
+      .button-wrapper {
+        display: inline-block;
+        border: 0px solid #4caf50; /* Обводка*/
+        border-radius: 6px;
+        padding: 1px;
+        background-color: white;
+        margin: 1px;
+      }
+      .send-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px; /* Высота длина*/
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+      }
+      .send-button::before {
+        content: "\f1d8"; /* Код иконки "отправить" из Font Awesome */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px; /* размер рисунка*/
+        opacity: 0.8; /* Прозрачность рисунка*/
+      }
+      .icon-text {
+        color: red;
+        font-size: 12px; /* Мелкий шрифт */
+        display: inline-flex;
+        align-items: center;
+      }
+      .icon-text i {
+        margin-right: 4px; /* Отступ между иконкой и текстом */
+      }
+    </style>
   </head>
   <body style="padding-top: 60px; padding-bottom: 100px">
     <!-- панель навигации -->
@@ -44,7 +97,7 @@
                 type="text"
                 id="myInput"
                 onkeyup="myFunction()"
-                placeholder="Швидкий пошук.."
+                placeholder="Быстрый поиск.."
               />
             </form>
           </div>
@@ -69,20 +122,27 @@
       </div>
       <!-- offcanvas-body -->
       <div class="offcanvas-body">
+        <select class="change-lang" aria-label="change language">
+          <option value="ua" selected>UA</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+          <option value="es">ES</option>
+        </select>
         <div id="dateend" class="container fw-bolder text-success"></div>
       </div>
       <div class="offcanvas-footer">
         <p class="text-center fs-6">
-          Техпідтримка:<br />
+          Техподдержка:<br />
           <a href="https://t.me/Servis_Control" target="_blank"
-            >Написати в Telegram</a
+            >Написать в Telegram</a
           ><br />
           <a href="https://wa.me/380632085036" target="_blank"
-            >Написати в WhatsApp</a
+            >Написать в WhatsApp</a
           ><br />
-          <a href="viber://chat?number=%2B380632085036">Написати в Viber</a
+          <a href="viber://chat?number=%2B380632085036">Написать в Viber</a
           ><br /><br />
-          Зателефонувати:<br />
+          Позвонить:<br />
           <a href="tel:+38 (095) 338-60-55">+38 (095) 338-60-55</a><br />
         </p>
       </div>
@@ -96,7 +156,7 @@
             class="btn btn-primary float-end"
             onclick="newOrder()"
           >
-            Новий візит
+            Новый визит
           </button>
         </div>
         <div class="col col-md-auto">
@@ -105,7 +165,7 @@
             class="btn btn-secondary float-end"
             onclick="addReportModal()"
           >
-            Звіти
+            Отчеты
           </button>
         </div>
       </div>
@@ -182,7 +242,7 @@
           tabindex="0"
         >
           <iframe
-            src="https://calendar.google.com/calendar/embed?height=500&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FKiev&title= &showNav=1&showDate=1&showPrint=0&showCalendars=0&showTz=0&src=Y180ZDIwYjAyZDJkZmI5NzZmYzVkOWVlZDQ0MGJmZWFlZjhjMzUwZTU4ZTAyMzIzNzc3YzA1NGQ1MDg1OWY1ZGE3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%239E69AF"
+            src="https://calendar.google.com/calendar/embed?height=500&wkst=2&ctz=Europe%2FMadrid&showTitle=0&showPrint=0&showCalendars=0&showTz=0&hl=ru&src=Y19iYzcxNmVmODc3NTdiMDVmYTVkMWVmYjM5NTk0ODk2N2Q0YWM3ZWE5ODQ1ZDYxZWI0YzA3ZDkyMjY2NzE1MzI2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23616161"
             style="border-width: 0"
             width="100%"
             height="500"
@@ -255,12 +315,8 @@
     <!-- footer -->
     <footer class="footer py-2 bg-body-secondary fixed-bottom">
       <div class="container text-center">
-        © 2014 servicecontrol:
-        <a
-          target="_blank"
-          href="https://sites.google.com/view/visitcontrol/interface"
-          >servicecontrol.page</a
-        >
+        © 2014 servicecontrol
+        <a target="_blank" href=""></a>
       </div>
     </footer>
     <!-- Bootstrap JS -->
