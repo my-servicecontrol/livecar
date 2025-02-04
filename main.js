@@ -401,7 +401,7 @@ var opcNum = [],
   opcYear = [],
   opcClient = [];
 function newOrder() {
-  const currentTime = moment().tz("Europe/Madrid");
+  const currentTime = moment().tz("Europe/Kiev");
   const vHour = currentTime.format("HH");
   const vMinutes = currentTime.format("mm");
   const vYear = currentTime.format("YYYY");
