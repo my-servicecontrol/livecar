@@ -457,7 +457,7 @@ function newOrder() {
 
   var title = `Створюємо новий візит до сервісу`;
   var buttons = `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
-            	   <button type="button" class="btn btn-success" onclick="addCheck()">Створити</button>`;
+            	   <button type="button" class="btn btn-success" onclick="addCheck()" disabled>Створити</button>`;
   $("#commonModal .modal-header .modal-title").html(title);
   $("#commonModal .modal-body").html(function () {
     return `<div class="row">
